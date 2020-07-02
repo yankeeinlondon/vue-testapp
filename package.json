@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf node_modules && yarn",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "analyze": "NODE_ENV=production yarn vue-cli-service build --mode analyze"
   },
   "dependencies": {
+    "common-types": "^1.15.8",
     "core-js": "^3.6.5",
+    "universal-fire": "^0.53.28",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^8.4.2",
+    "vue-property-decorator": "^9.0.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
@@ -33,7 +37,10 @@
     "@vue/test-utils": "^1.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "rimraf": "^3.0.2",
+    "terser-webpack-plugin": "^3.0.6",
     "typescript": "~3.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^3.8.0"
   }
 }
